@@ -1,6 +1,6 @@
 langchain
-openai
+langchain-huggingface
 chromadb
 pypdf
 langchain_community
-tiktoken
+ipywidgets
