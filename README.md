@@ -13,3 +13,12 @@ conda activate cb
 ```bash
 pip install -r req.txt
 ```
+
+## download ollama
+
+-then run command
+
+```bash
+ollama run llama2
+```
+-this would download the llama2 quantized model
