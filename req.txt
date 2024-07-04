@@ -4,3 +4,4 @@ chromadb
 pypdf
 langchain_community
 ipywidgets
+ollama
