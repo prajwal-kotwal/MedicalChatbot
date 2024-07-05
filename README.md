@@ -22,3 +22,9 @@ pip install -r req.txt
 ollama run llama2
 ```
 -this would download the llama2 quantized model
+
+## Run streamlit app using
+
+```bash
+stramlit run app.py
+```
