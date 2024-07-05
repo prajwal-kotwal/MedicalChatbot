@@ -5,3 +5,4 @@ pypdf
 langchain_community
 ipywidgets
 ollama
+streamlit
