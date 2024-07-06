@@ -11,7 +11,7 @@ CHROMA_PATH = "chroma"
 db = Chroma(persist_directory=CHROMA_PATH,embedding_function=embeddings_model)
 #creating prompt template
 PROMPT_TEMPLATE ="""
-Answer the questio based only on the following context:
+Answer the question based only on the following context:
 {context}
 
 ---
