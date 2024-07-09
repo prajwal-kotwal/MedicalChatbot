@@ -26,5 +26,5 @@ ollama run llama2
 ## Run streamlit app using
 
 ```bash
-stramlit run app.py
+streamlit run {{file_name}}
 ```
