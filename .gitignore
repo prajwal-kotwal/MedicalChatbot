@@ -163,3 +163,5 @@ cython_debug/
 api.txt
 chroma
 model.pkl
+openai_key
+huggingface_token

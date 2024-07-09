@@ -2,7 +2,17 @@ import streamlit as st
 import pickle
 from langchain.vectorstores.chroma import Chroma
 from langchain.prompts import ChatPromptTemplate
-from langchain_community.llms.ollama import Ollama
+import os
+from huggingface_hub import InferenceClient
+
+#setting up the huggingfacehub api token
+HUGGINGFACEHUB_API_TOKEN="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"
+os.environ["HUGGINGFACEHUB_API_TOKEN"]="HUGGINGFACEHUB_API_TOKEN"
+
+client = InferenceClient(
+    "meta-llama/Meta-Llama-3-8B-Instruct",
+    token="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",
+)
 
 # Loading embedding model from model.pkl
 embeddings_model = pickle.load(open('model.pkl', 'rb'))
@@ -28,8 +38,7 @@ def query_result(query):
     prompt = prompt_template.format(context=context_text, question=query)
     return prompt
 
-# Loading llama2 llm model
-llm = Ollama(model="llama2")
+
 
 if __name__ == '__main__':
     st.title('CHATBOT')
@@ -48,8 +57,8 @@ if __name__ == '__main__':
     if query:
         # Generate prompt and get response from LLM
         prompt = query_result(query)
-        response_text = llm.invoke(prompt)
-
+        response_text = client.chat_completion(prompt,max_tokens=100,stream=False)
+        first_paragraph = response_text.choices[0].message.content.split("\n\n---\n\n")[0]
         # Display user message
         with st.chat_message("user", avatar="👤"):
             st.markdown(query)
@@ -57,5 +66,5 @@ if __name__ == '__main__':
 
         # Display assistant response
         with st.chat_message("assistant", avatar="🤖"):
-            st.markdown(response_text)
-        st.session_state.messages.append({"role": "assistant", "content": response_text})
+            st.markdown(first_paragraph)
+        st.session_state.messages.append({"role": "assistant", "content": first_paragraph})
