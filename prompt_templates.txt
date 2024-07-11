@@ -1,0 +1,17 @@
+PROMPT_TEMPLATE = """
+In an informative way, answer the question based on the following context:
+{context}
+
+---
+Answer the question: {question}
+"""
+
+
+PROMPT_TEMPLATE = """
+In a short and informative way, answer the question based on the following context:
+{context}
+
+---
+Answer the question in a single sentence: {question}
+"""
+

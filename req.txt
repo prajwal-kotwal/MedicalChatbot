@@ -4,5 +4,5 @@ chromadb
 pypdf
 langchain_community
 ipywidgets
-ollama
 streamlit
+google-generativeai
