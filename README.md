@@ -19,4 +19,4 @@ streamlit run {{file_name}}
 ```
 
 #Google AI Studio
--- [create an api key]("https://aistudio.google.com/app/apikey")
+-- [create an api key](https://aistudio.google.com/app/apikey)
