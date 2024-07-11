@@ -18,5 +18,5 @@ pip install -r req.txt
 streamlit run {{file_name}}
 ```
 
-# Google AI Studio
+## Google AI Studio
 -- [create an api key](https://aistudio.google.com/app/apikey)
