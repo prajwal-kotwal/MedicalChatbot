@@ -6,8 +6,6 @@ import os
 import google.generativeai as genai
 import google_api_key as GG #it is my own python file in which i have saved api key
 
-
-
 genai.configure(api_key=GG.Google_api_key)
 
 model = genai.GenerativeModel(
@@ -16,26 +14,19 @@ model = genai.GenerativeModel(
         max_output_tokens=2000,
         temperature=0.9,
     ))
-
-
 # Loading embedding model from model.pkl
 embeddings_model = pickle.load(open('model.pkl', 'rb'))
-
 # Connecting to existing database
 CHROMA_PATH = "chroma"
 db = Chroma(persist_directory=CHROMA_PATH, embedding_function=embeddings_model)
-
 # Creating prompt template
 PROMPT_TEMPLATE = """
-In an informative way, answer the question based on the following context:
+Provide an informative response based on the following information:
 {context}
 
 ---
-Answer the question: {question}
+Question: {question}
 """
-
-
-
 # Function for generating prompts
 def query_result(query):
     results = db.similarity_search_with_relevance_scores(query, k=10)
@@ -43,7 +34,6 @@ def query_result(query):
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
     prompt = prompt_template.format(context=context_text, question=query)
     return prompt
-
 
 
 if __name__ == '__main__':
@@ -59,7 +49,6 @@ if __name__ == '__main__':
 
     # Input for user query
     query = st.chat_input("Type your message here...")
-
     if query:
         try:
             # Generate prompt and get response from LLM
