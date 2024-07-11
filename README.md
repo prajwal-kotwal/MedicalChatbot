@@ -14,17 +14,9 @@ conda activate cb
 pip install -r req.txt
 ```
 
-## download ollama
-
--then run command
-
-```bash
-ollama run llama2
-```
--this would download the llama2 quantized model
-
-## Run streamlit app using
-
 ```bash
 streamlit run {{file_name}}
 ```
+
+#Google AI Studio
+-- [create an api key]("https://aistudio.google.com/app/apikey")
