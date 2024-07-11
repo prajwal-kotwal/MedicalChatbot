@@ -17,7 +17,7 @@ pip install -r req.txt
 ## Google AI Studio
 -- [create an api key](https://aistudio.google.com/app/apikey)
 
-###Chatbot App
+### Chatbot App
 ```bash
 streamlit run Chatbot.py
 ```
