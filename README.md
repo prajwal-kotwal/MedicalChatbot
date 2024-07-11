@@ -14,9 +14,10 @@ conda activate cb
 pip install -r req.txt
 ```
 
-```bash
-streamlit run {{file_name}}
-```
-
 ## Google AI Studio
 -- [create an api key](https://aistudio.google.com/app/apikey)
+
+###Chatbot App
+```bash
+streamlit run Chatbot.py
+```
