@@ -15,3 +15,12 @@ In a short and informative way, answer the question based on the following conte
 Answer the question in a single sentence: {question}
 """
 
+PROMPT_TEMPLATE = """
+Provide an informative response based on the following information:
+{context}
+
+---
+Question: {question}
+
+Please ensure that the response is plain text, without any markdown, HTML, or other formatting.
+"""
